@@ -36,19 +36,16 @@ const selectHeight = selectCanvas.height / numSelectables;
 //creating the tilemap nested array
 let tilemap: HTMLImageElement[][] = new Array(numTiles);
 
-
-for (let i = 0; i < tilemap.length; i++) {
+for (let i = 0; i < numTiles; i++) {
     tilemap[i] = new Array(numTiles);
-    for (let j = 0; j < tilemap[i].length; j++) {
+    for (let j = 0; j < numTiles; j++) {
         tilemap[i][j] = new Image();
-        tilemap[i][j].src = imageUrls[Math.floor(Math.random() * imageUrls.length)];
+        tilemap[i][j].src = imageUrls[0];
     }
 }
 
-// need to implement a flyweight pattern for the above code
-
 //track the selected tile
-let currentTile = "/tile7.png";
+let currentTile = imageUrls[1];
 
 //draw the initial canvases
 redrawTilemap();
